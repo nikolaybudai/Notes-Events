@@ -23,14 +23,20 @@ class EventsMainViewController: UIViewController {
         navigationItem.title = "My Events"
         
         setupFetchedResultsController()
+        configureEventsTableView()
         refreshEventsCountLabel()
     }
     
     //MARK: - Methods
     
+    private func configureEventsTableView() {
+        eventsTableView.delegate = self
+        eventsTableView.dataSource = self
+    }
+    
     private func refreshEventsCountLabel() {
         let count = fetchedResultsController.sections![0].numberOfObjects
-        eventsCountLabel.text = "\(count) \(count == 1 ? "note" : "notes")"
+        eventsCountLabel.text = "\(count) \(count == 1 ? "event" : "events")"
     }
     
     private func setupFetchedResultsController() {
@@ -43,6 +49,8 @@ class EventsMainViewController: UIViewController {
         } catch {
             print(error.localizedDescription)
         }
+        
+        refreshEventsCountLabel()
     }
     
     private func goToEditingEvent(event: Event) {
@@ -151,6 +159,7 @@ extension EventsMainViewController: NSFetchedResultsControllerDelegate {
             eventsTableView.reloadData()
         }
         
+        refreshEventsCountLabel()
     }
     
 }
