@@ -210,6 +210,21 @@
             </objects>
             <point key="canvasLocation" x="1369.2307692307693" y="95.97156398104265"/>
         </scene>
+        <!--Events Main View Controller-->
+        <scene sceneID="5jP-ip-y3D">
+            <objects>
+                <viewController storyboardIdentifier="EventsDetailViewController" id="R3A-GQ-tTU" customClass="EventsMainViewController" customModule="Notes_Events" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="emg-ln-iwJ">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="SY4-9H-vWX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ncm-Sd-HJo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1369" y="779"/>
+        </scene>
         <!--Note Detail View Controller-->
         <scene sceneID="nbK-bP-cHg">
             <objects>
