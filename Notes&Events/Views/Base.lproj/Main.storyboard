@@ -213,17 +213,106 @@
         <!--Events Main View Controller-->
         <scene sceneID="5jP-ip-y3D">
             <objects>
-                <viewController storyboardIdentifier="EventsDetailViewController" id="R3A-GQ-tTU" customClass="EventsMainViewController" customModule="Notes_Events" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EventsMainViewController" id="R3A-GQ-tTU" customClass="EventsMainViewController" customModule="Notes_Events" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="emg-ln-iwJ">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Auf-w9-nKm">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="776"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventCell" rowHeight="65" id="0yt-lV-rgi" customClass="EventsTableViewCell" customModule="Notes_Events" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0yt-lV-rgi" id="LzN-RJ-Yh8">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="65"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="En8-Em-SDS">
+                                                    <rect key="frame" x="20" y="4" width="350" height="27"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Cb-XI-rmt">
+                                                    <rect key="frame" x="20" y="33" width="350" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="En8-Em-SDS" firstAttribute="leading" secondItem="LzN-RJ-Yh8" secondAttribute="leading" constant="20" symbolic="YES" id="47T-lx-1Jn"/>
+                                                <constraint firstItem="En8-Em-SDS" firstAttribute="top" secondItem="LzN-RJ-Yh8" secondAttribute="top" constant="4" id="BNV-qo-D4A"/>
+                                                <constraint firstAttribute="trailing" secondItem="En8-Em-SDS" secondAttribute="trailing" priority="999" constant="20" symbolic="YES" id="C0w-nU-kZd"/>
+                                                <constraint firstItem="7Cb-XI-rmt" firstAttribute="leading" secondItem="LzN-RJ-Yh8" secondAttribute="leading" constant="20" symbolic="YES" id="FXC-ZI-qdX"/>
+                                                <constraint firstAttribute="bottom" secondItem="7Cb-XI-rmt" secondAttribute="bottom" constant="11" id="eQl-L1-zjj"/>
+                                                <constraint firstAttribute="trailing" secondItem="7Cb-XI-rmt" secondAttribute="trailing" priority="999" constant="20" symbolic="YES" id="yit-ZP-F08"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="7Cb-XI-rmt" id="xNJ-eX-Zje"/>
+                                            <outlet property="titleLabel" destination="En8-Em-SDS" id="OLb-ps-PkL"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 events" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8z-4z-CzY">
+                                <rect key="frame" x="138.66666666666666" y="789" width="113" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="113" id="TQL-6l-hm9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.55581202659999995" green="0.025837300269999999" blue="0.0050176917739999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6US-LG-H2d">
+                                <rect key="frame" x="302.66666666666669" y="784" width="71.333333333333314" height="31"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Add">
+                                    <color key="baseForegroundColor" red="0.55581202659999995" green="0.025837300269999999" blue="0.0050176917739999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="addButtonTapped:" destination="R3A-GQ-tTU" eventType="touchUpInside" id="VY9-8h-MrA"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="SY4-9H-vWX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="n8z-4z-CzY" firstAttribute="centerX" secondItem="SY4-9H-vWX" secondAttribute="centerX" id="5B9-ea-N6H"/>
+                            <constraint firstItem="SY4-9H-vWX" firstAttribute="bottom" secondItem="Auf-w9-nKm" secondAttribute="bottom" constant="34" id="6J2-wa-3Y2"/>
+                            <constraint firstItem="SY4-9H-vWX" firstAttribute="top" secondItem="Auf-w9-nKm" secondAttribute="top" constant="44" id="8G1-Qr-zGR"/>
+                            <constraint firstItem="Auf-w9-nKm" firstAttribute="leading" secondItem="SY4-9H-vWX" secondAttribute="leading" id="U6l-Il-gfr"/>
+                            <constraint firstItem="6US-LG-H2d" firstAttribute="bottom" secondItem="SY4-9H-vWX" secondAttribute="bottom" constant="5" id="V3g-Tu-7zT"/>
+                            <constraint firstItem="SY4-9H-vWX" firstAttribute="trailing" secondItem="Auf-w9-nKm" secondAttribute="trailing" id="cSe-UA-aIi"/>
+                            <constraint firstItem="SY4-9H-vWX" firstAttribute="bottom" secondItem="n8z-4z-CzY" secondAttribute="bottom" id="gJ3-4X-r35"/>
+                            <constraint firstItem="SY4-9H-vWX" firstAttribute="trailing" secondItem="6US-LG-H2d" secondAttribute="trailing" constant="16" id="saV-Ps-D4l"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="eventsCountLabel" destination="n8z-4z-CzY" id="C6o-yb-yeC"/>
+                        <outlet property="eventsTableView" destination="Auf-w9-nKm" id="nya-MU-pgD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ncm-Sd-HJo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1369" y="779"/>
+            <point key="canvasLocation" x="1367.6923076923076" y="778.43601895734594"/>
+        </scene>
+        <!--Events Detail View Controller-->
+        <scene sceneID="zGc-eC-cg7">
+            <objects>
+                <viewController storyboardIdentifier="EventsDetailViewController" id="qz4-g1-1TV" customClass="EventsDetailViewController" customModule="Notes_Events" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="35W-NT-Si1">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="01Z-ME-Be8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4QC-tf-vsR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2097" y="778"/>
         </scene>
         <!--Note Detail View Controller-->
         <scene sceneID="nbK-bP-cHg">

@@ -26,7 +26,7 @@ class WelcomeViewController: UIViewController {
     }
     
     @IBAction func myEventsButtonTapped(_ sender: Any) {
-        guard let controller = storyboard?.instantiateViewController(withIdentifier: EventsMainViewController.identifier) else { return }
+        guard let controller = storyboard?.instantiateViewController(withIdentifier: EventsMainViewController.identifier) as? EventsMainViewController else { return }
         navigationController?.pushViewController(controller, animated: true)
     }
     

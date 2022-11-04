@@ -23,6 +23,8 @@
 		EDDE7644290C2E0500E89522 /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDE7640290C2E0500E89522 /* Event+CoreDataClass.swift */; };
 		EDDE7645290C2E0500E89522 /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDE7641290C2E0500E89522 /* Event+CoreDataProperties.swift */; };
 		EDDE7654290C348C00E89522 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDE7653290C348C00E89522 /* CoreDataManager.swift */; };
+		EDE8FD9729159DB300E8DDDB /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE8FD9629159DB300E8DDDB /* EventsTableViewCell.swift */; };
+		EDE8FD9A2915A47100E8DDDB /* EventsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE8FD992915A47100E8DDDB /* EventsDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		EDDE7640290C2E0500E89522 /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataClass.swift"; sourceTree = "<group>"; };
 		EDDE7641290C2E0500E89522 /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		EDDE7653290C348C00E89522 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		EDE8FD9629159DB300E8DDDB /* EventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
+		EDE8FD992915A47100E8DDDB /* EventsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				EDA4B5AD29156116001236F7 /* EventsMainViewController.swift */,
+				EDE8FD9629159DB300E8DDDB /* EventsTableViewCell.swift */,
 			);
 			path = EventsMainScreen;
 			sourceTree = "<group>";
@@ -160,6 +165,7 @@
 		EDDE764C290C323E00E89522 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				EDE8FD982915A44C00E8DDDB /* EventsDetailScreen */,
 				EDA4B5AC291560FB001236F7 /* EventsMainScreen */,
 				EDDE764D290C326E00E89522 /* WelcomeViewScreen */,
 				EDDE764E290C329200E89522 /* NotesMainScreen */,
@@ -191,6 +197,14 @@
 				EDDE7653290C348C00E89522 /* CoreDataManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		EDE8FD982915A44C00E8DDDB /* EventsDetailScreen */ = {
+			isa = PBXGroup;
+			children = (
+				EDE8FD992915A47100E8DDDB /* EventsDetailViewController.swift */,
+			);
+			path = EventsDetailScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,9 +286,11 @@
 				ED8094AB290CFB6000884393 /* NoteDetailViewController.swift in Sources */,
 				EDDE7644290C2E0500E89522 /* Event+CoreDataClass.swift in Sources */,
 				ED4E2CD82904036000542508 /* AppDelegate.swift in Sources */,
+				EDE8FD9729159DB300E8DDDB /* EventsTableViewCell.swift in Sources */,
 				ED4E2CE22904036000542508 /* Notes_Events.xcdatamodeld in Sources */,
 				ED4E2CDA2904036000542508 /* SceneDelegate.swift in Sources */,
 				EDDE763D290C2D3100E89522 /* NoteTableViewCell.swift in Sources */,
+				EDE8FD9A2915A47100E8DDDB /* EventsDetailViewController.swift in Sources */,
 				EDA4B5AE29156116001236F7 /* EventsMainViewController.swift in Sources */,
 				EDDE7654290C348C00E89522 /* CoreDataManager.swift in Sources */,
 			);
