@@ -68,6 +68,52 @@ class EventsMainViewController: UIViewController {
     
 }
 
+//MARK: - UITableViewDelegate and UITableViewDatasource
+
+extension EventsMainViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let events = fetchedResultsController.sections?[section] else { return 0 }
+        return events.numberOfObjects
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 65
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = eventsTableView.dequeueReusableCell(withIdentifier: EventsTableViewCell.identifier) as? EventsTableViewCell
+        else {
+            return UITableViewCell()
+        }
+        
+        let event = fetchedResultsController.object(at: indexPath)
+        
+        cell.setup(event: event)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let event = fetchedResultsController.object(at: indexPath)
+        goToEditingEvent(event: event)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let event = fetchedResultsController.object(at: indexPath)
+            deleteEventFromStorage(event: event)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+}
+
+
+//MARK: - NSFetchedResultsControllerDelegate
 
 extension EventsMainViewController: NSFetchedResultsControllerDelegate {
     
