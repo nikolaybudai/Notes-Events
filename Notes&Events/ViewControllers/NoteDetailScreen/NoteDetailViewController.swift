@@ -1,0 +1,117 @@
+//
+//  NoteDetailViewController.swift
+//  Notes&Events
+//
+//  Created by Nikolay Budai on 29.10.22.
+//
+
+import UIKit
+
+class NoteDetailViewController: UIViewController {
+
+    static let identifier = "NoteDetailViewController"
+    
+    @IBOutlet weak var noteTextView: UITextView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
+    var note: Note!
+    
+    private var tapGestureRecognizer = UITapGestureRecognizer()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        noteTextView.text = note.text
+        segmentedControl.selectedSegmentIndex = Int(note.priority.rawValue)
+        
+        configureSegmentedControl()
+        configureTapGestureRecognizer()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        noteTextView.becomeFirstResponder()
+//        noteTextView.delegate = self
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+         saveNote()
+    }
+
+    //MARK: - Methods
+    
+    private func configureTapGestureRecognizer() {
+        tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGestureRecognizer.cancelsTouchesInView = false
+        noteTextView.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    private func configureSegmentedControl() {
+        let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        segmentedControl.setTitleTextAttributes(titleTextAttributes, for: .normal)
+    }
+    
+    private func updateNote() {
+        note.lastUpdated = Date()
+        CoreDataManager.shared.saveContext()
+    }
+    
+    private func deleteNote() {
+        CoreDataManager.shared.deleteNote(note)
+    }
+    
+    func saveNote() {
+        note.text = noteTextView.text
+
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            note.priority = PriorityType.low
+        case 1:
+            note.priority = PriorityType.middle
+        case 2:
+            note.priority = PriorityType.high
+        default:
+            note.priority = .low
+        }
+        if note.text?.isEmpty ?? true {
+            deleteNote()
+        } else {
+            updateNote()
+        }
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+}
+
+
+////MARK: - UITextViewDelegate
+//
+//extension NoteDetailViewController: UITextViewDelegate {
+//
+//    func textViewDidEndEditing(_ textView: UITextView) {
+//        note.text = noteTextView.text
+//
+//        switch segmentedControl.selectedSegmentIndex {
+//        case 0:
+//            note.priority = PriorityType.low
+//        case 1:
+//            note.priority = PriorityType.middle
+//        case 2:
+//            note.priority = PriorityType.high
+//        default:
+//            note.priority = .low
+//        }
+//        if note.text?.isEmpty ?? true {
+//            deleteNote()
+//        } else {
+//            updateNote()
+//        }
+//    }
+//
+//}
