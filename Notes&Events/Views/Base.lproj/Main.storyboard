@@ -268,7 +268,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6US-LG-H2d">
-                                <rect key="frame" x="302.66666666666669" y="784" width="71.333333333333314" height="31"/>
+                                <rect key="frame" x="303" y="784" width="71" height="31"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Add">
                                     <color key="baseForegroundColor" red="0.55581202659999995" green="0.025837300269999999" blue="0.0050176917739999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
@@ -306,13 +306,42 @@
                     <view key="view" contentMode="scaleToFill" id="35W-NT-Si1">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VW1-Hc-8B6">
+                                <rect key="frame" x="0.0" y="44" width="390" height="422"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mFf-W3-xJ0">
+                                <rect key="frame" x="0.0" y="569" width="405" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="cIQ-eO-ZEU"/>
+                                </constraints>
+                            </pickerView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="01Z-ME-Be8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VW1-Hc-8B6" firstAttribute="centerX" secondItem="01Z-ME-Be8" secondAttribute="centerX" id="4Sc-xk-t1s"/>
+                            <constraint firstItem="VW1-Hc-8B6" firstAttribute="leading" secondItem="01Z-ME-Be8" secondAttribute="leading" id="9Ks-VO-Z7Y"/>
+                            <constraint firstItem="VW1-Hc-8B6" firstAttribute="height" secondItem="35W-NT-Si1" secondAttribute="height" multiplier="0.5" id="An2-YB-Klg"/>
+                            <constraint firstItem="mFf-W3-xJ0" firstAttribute="top" secondItem="VW1-Hc-8B6" secondAttribute="bottom" constant="103" id="FU6-kL-U9b"/>
+                            <constraint firstItem="01Z-ME-Be8" firstAttribute="trailing" secondItem="VW1-Hc-8B6" secondAttribute="trailing" id="TMc-IV-5Zf"/>
+                            <constraint firstItem="mFf-W3-xJ0" firstAttribute="leading" secondItem="01Z-ME-Be8" secondAttribute="leading" id="c6G-KC-t5k"/>
+                            <constraint firstItem="01Z-ME-Be8" firstAttribute="trailing" secondItem="mFf-W3-xJ0" secondAttribute="trailing" id="mER-wH-hUn"/>
+                            <constraint firstItem="VW1-Hc-8B6" firstAttribute="top" secondItem="01Z-ME-Be8" secondAttribute="top" id="ogi-QR-ndB"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="datePickerView" destination="mFf-W3-xJ0" id="u6P-M4-6OZ"/>
+                        <outlet property="eventsTextView" destination="VW1-Hc-8B6" id="TbU-d4-WSW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4QC-tf-vsR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2097" y="778"/>
+            <point key="canvasLocation" x="2096.9230769230767" y="777.7251184834123"/>
         </scene>
         <!--Note Detail View Controller-->
         <scene sceneID="nbK-bP-cHg">

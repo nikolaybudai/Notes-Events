@@ -11,6 +11,9 @@ class EventsDetailViewController: UIViewController {
 
     static let identifier = "EventsDetailViewController"
     
+    @IBOutlet weak var eventsTextView: UITextView!
+    @IBOutlet weak var datePickerView: UIPickerView!
+    
     var event: Event!
     
     override func viewDidLoad() {
