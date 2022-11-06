@@ -103,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				EDA4B5AD29156116001236F7 /* EventsMainViewController.swift */,
-				EDE8FD9629159DB300E8DDDB /* EventsTableViewCell.swift */,
 			);
 			path = EventsMainScreen;
 			sourceTree = "<group>";
@@ -156,6 +155,8 @@
 		EDDE764B290C322000E89522 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EDDE763C290C2D3100E89522 /* NoteTableViewCell.swift */,
+				EDE8FD9629159DB300E8DDDB /* EventsTableViewCell.swift */,
 				ED4E2CDD2904036000542508 /* Main.storyboard */,
 				ED4E2CE52904036100542508 /* LaunchScreen.storyboard */,
 			);
@@ -186,7 +187,6 @@
 			isa = PBXGroup;
 			children = (
 				EDDE763A290C2D0C00E89522 /* NotesMainViewController.swift */,
-				EDDE763C290C2D3100E89522 /* NoteTableViewCell.swift */,
 			);
 			path = NotesMainScreen;
 			sourceTree = "<group>";

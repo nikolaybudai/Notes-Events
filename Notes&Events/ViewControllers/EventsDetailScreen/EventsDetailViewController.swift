@@ -12,7 +12,7 @@ class EventsDetailViewController: UIViewController {
     static let identifier = "EventsDetailViewController"
     
     @IBOutlet weak var eventsTextView: UITextView!
-    @IBOutlet weak var datePickerView: UIPickerView!
+    @IBOutlet weak var datePicker: UIDatePicker!
     
     var event: Event!
     
