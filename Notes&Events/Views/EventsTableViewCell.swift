@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EventsTableViewCell: UITableViewCell {
+final class EventsTableViewCell: UITableViewCell {
     
     static let identifier = "EventCell"
     

@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class EventsMainViewController: UIViewController {
+final class EventsMainViewController: UIViewController {
 
     //MARK: - Variables and Constants
     

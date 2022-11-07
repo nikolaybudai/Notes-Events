@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NoteDetailViewController: UIViewController {
+final class NoteDetailViewController: UIViewController {
 
     //MARK: - Variables and Constants
     

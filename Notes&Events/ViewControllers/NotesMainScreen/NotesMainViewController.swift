@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class NotesMainViewController: UIViewController {
+final class NotesMainViewController: UIViewController {
 
     //MARK: - Variables and Constants
     
@@ -76,7 +76,6 @@ class NotesMainViewController: UIViewController {
         navigationItem.searchController = searchController
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.delegate = self
-        searchController.delegate = self
     }
     
     private func goToNoteEditing(note: Note) {
@@ -108,16 +107,12 @@ class NotesMainViewController: UIViewController {
     
 }
 
-//MARK: - UITableViewDelegate and UITableViewDataSource
+//MARK: - UITableViewDataSource
 
-extension NotesMainViewController: UITableViewDelegate, UITableViewDataSource {
+extension NotesMainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let notes = fetchedResultsController?.sections?[section] else { return 0 }
         return notes.numberOfObjects
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 65
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -133,11 +128,6 @@ extension NotesMainViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let note = fetchedResultsController?.object(at: indexPath) else { return }
-        goToNoteEditing(note: note)
-    }
-    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             guard let note = fetchedResultsController?.object(at: indexPath) else { return }
@@ -148,6 +138,22 @@ extension NotesMainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
+    
+}
+
+//MARK: - UITableViewDelegate
+
+extension NotesMainViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 65
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let note = fetchedResultsController?.object(at: indexPath) else { return }
+        goToNoteEditing(note: note)
+    }
+    
 }
 
 //MARK: - NSFetchedResultControllerDelegate
@@ -193,9 +199,9 @@ extension NotesMainViewController: NSFetchedResultsControllerDelegate {
     }
 }
 
-//MARK: - UISearchController Configuration
+//MARK: - UISearchBarDelegate
 
-extension NotesMainViewController: UISearchControllerDelegate, UISearchBarDelegate {
+extension NotesMainViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         search(searchText)
@@ -215,7 +221,7 @@ extension NotesMainViewController: UISearchControllerDelegate, UISearchBarDelega
         } else {
             setupFetchedResultsController()
         }
-        
+
         notesTableView.reloadData()
     }
     

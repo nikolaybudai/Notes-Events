@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EventsDetailViewController: UIViewController {
+final class EventsDetailViewController: UIViewController {
 
     //MARK: - Variables and Constants
     

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NoteTableViewCell: UITableViewCell {
+final class NoteTableViewCell: UITableViewCell {
 
     static let identifier = "NoteCell"
     
