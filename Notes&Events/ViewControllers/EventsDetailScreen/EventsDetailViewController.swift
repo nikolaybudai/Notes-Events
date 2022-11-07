@@ -13,6 +13,7 @@ class EventsDetailViewController: UIViewController {
     
     @IBOutlet weak var eventTextView: UITextView!
     @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var scheduleButton: UIButton!
     
     var event: Event!
     
@@ -22,7 +23,9 @@ class EventsDetailViewController: UIViewController {
         super.viewDidLoad()
 
         eventTextView.text = event.title
+        datePicker.date = event.date ?? Date()
         configureTapGestureRecognizer()
+        configureScheduleButton()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -31,13 +34,17 @@ class EventsDetailViewController: UIViewController {
         eventTextView.becomeFirstResponder()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         saveEvent()
     }
     
     //MARK: - Methods
+    
+    private func configureScheduleButton() {
+        scheduleButton.layer.cornerRadius = 15
+    }
     
     private func configureTapGestureRecognizer() {
         tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -67,5 +74,22 @@ class EventsDetailViewController: UIViewController {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
-
+    
+    //MARK: - Actions
+    
+    @IBAction func scheduleButtonTapped(_ sender: Any) {
+        
+        let isAuthorized = NotificationsManager.shared.isStatusAuthorized()
+        var alertController = UIAlertController()
+        
+        if isAuthorized {
+            NotificationsManager.shared.scheduleNotification(title: "Dont't forget", body: eventTextView.text, date: datePicker.date)
+            alertController = NotificationsManager.shared.createConfirmingAlertController(date: datePicker.date)
+        } else {
+            alertController = NotificationsManager.shared.createNotificationDisabledAlertController()
+        }
+        
+        present(alertController, animated: true)
+    }
+    
 }

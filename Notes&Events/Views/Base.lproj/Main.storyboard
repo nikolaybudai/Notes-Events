@@ -307,7 +307,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VW1-Hc-8B6">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VW1-Hc-8B6">
                                 <rect key="frame" x="0.0" y="44" width="390" height="422"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -315,14 +315,34 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="AqY-ZP-oEg">
-                                <rect key="frame" x="0.0" y="529" width="390" height="162"/>
+                                <rect key="frame" x="0.0" y="491" width="390" height="162"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="162" id="xEE-kB-ELW"/>
                                 </constraints>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="688993200">
+                                    <!--2022-11-01 11:00:00 +0000-->
+                                </date>
                                 <date key="maximumDate" timeIntervalSinceReferenceDate="946638000">
                                     <!--2030-12-31 11:00:00 +0000-->
                                 </date>
                             </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0x-TI-pd5">
+                                <rect key="frame" x="93" y="685" width="204" height="54"/>
+                                <color key="backgroundColor" red="0.68235301969999995" green="0.13725490870000001" blue="0.090196087960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="204" id="g5a-Qz-0q8"/>
+                                    <constraint firstAttribute="height" constant="54" id="zUS-oK-OIR"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Schedule">
+                                    <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="24"/>
+                                    <color key="baseForegroundColor" red="0.99386895490000005" green="1" blue="0.98052496160000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="myEventsButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cfR-IN-Srd"/>
+                                    <action selector="scheduleButtonTapped:" destination="qz4-g1-1TV" eventType="touchUpInside" id="DnL-Iw-5Nb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="01Z-ME-Be8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -330,9 +350,11 @@
                             <constraint firstItem="VW1-Hc-8B6" firstAttribute="centerX" secondItem="01Z-ME-Be8" secondAttribute="centerX" id="4Sc-xk-t1s"/>
                             <constraint firstItem="VW1-Hc-8B6" firstAttribute="leading" secondItem="01Z-ME-Be8" secondAttribute="leading" id="9Ks-VO-Z7Y"/>
                             <constraint firstItem="VW1-Hc-8B6" firstAttribute="height" secondItem="35W-NT-Si1" secondAttribute="height" multiplier="0.5" id="An2-YB-Klg"/>
-                            <constraint firstItem="AqY-ZP-oEg" firstAttribute="top" secondItem="VW1-Hc-8B6" secondAttribute="bottom" constant="63" id="Hwj-GT-k70"/>
+                            <constraint firstItem="l0x-TI-pd5" firstAttribute="centerX" secondItem="01Z-ME-Be8" secondAttribute="centerX" id="LeI-QR-DXP"/>
                             <constraint firstItem="AqY-ZP-oEg" firstAttribute="centerX" secondItem="01Z-ME-Be8" secondAttribute="centerX" id="MzK-0K-8vk"/>
+                            <constraint firstItem="AqY-ZP-oEg" firstAttribute="top" secondItem="VW1-Hc-8B6" secondAttribute="bottom" constant="25" id="Oy4-JQ-w1S"/>
                             <constraint firstItem="01Z-ME-Be8" firstAttribute="trailing" secondItem="VW1-Hc-8B6" secondAttribute="trailing" id="TMc-IV-5Zf"/>
+                            <constraint firstItem="l0x-TI-pd5" firstAttribute="top" secondItem="AqY-ZP-oEg" secondAttribute="bottom" constant="32" id="iFO-oM-PX4"/>
                             <constraint firstItem="VW1-Hc-8B6" firstAttribute="top" secondItem="01Z-ME-Be8" secondAttribute="top" id="ogi-QR-ndB"/>
                             <constraint firstItem="AqY-ZP-oEg" firstAttribute="width" secondItem="35W-NT-Si1" secondAttribute="width" id="vuf-Vc-RFN"/>
                         </constraints>
@@ -340,6 +362,7 @@
                     <connections>
                         <outlet property="datePicker" destination="AqY-ZP-oEg" id="vPO-8I-Lnl"/>
                         <outlet property="eventTextView" destination="VW1-Hc-8B6" id="TbU-d4-WSW"/>
+                        <outlet property="scheduleButton" destination="l0x-TI-pd5" id="8Qy-7t-a2J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4QC-tf-vsR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

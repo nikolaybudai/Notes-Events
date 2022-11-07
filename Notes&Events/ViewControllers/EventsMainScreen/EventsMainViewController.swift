@@ -17,6 +17,12 @@ class EventsMainViewController: UIViewController {
     
     private var fetchedResultsController: NSFetchedResultsController<Event>!
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        eventsTableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

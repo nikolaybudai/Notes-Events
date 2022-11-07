@@ -25,6 +25,7 @@
 		EDDE7654290C348C00E89522 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDE7653290C348C00E89522 /* CoreDataManager.swift */; };
 		EDE8FD9729159DB300E8DDDB /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE8FD9629159DB300E8DDDB /* EventsTableViewCell.swift */; };
 		EDE8FD9A2915A47100E8DDDB /* EventsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE8FD992915A47100E8DDDB /* EventsDetailViewController.swift */; };
+		EDFB91B12918FB1900DB6856 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFB91B02918FB1900DB6856 /* NotificationsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		EDDE7653290C348C00E89522 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		EDE8FD9629159DB300E8DDDB /* EventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
 		EDE8FD992915A47100E8DDDB /* EventsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsDetailViewController.swift; sourceTree = "<group>"; };
+		EDFB91B02918FB1900DB6856 /* NotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				EDDE7653290C348C00E89522 /* CoreDataManager.swift */,
+				EDFB91B02918FB1900DB6856 /* NotificationsManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				ED4E2CD82904036000542508 /* AppDelegate.swift in Sources */,
 				EDE8FD9729159DB300E8DDDB /* EventsTableViewCell.swift in Sources */,
 				ED4E2CE22904036000542508 /* Notes_Events.xcdatamodeld in Sources */,
+				EDFB91B12918FB1900DB6856 /* NotificationsManager.swift in Sources */,
 				ED4E2CDA2904036000542508 /* SceneDelegate.swift in Sources */,
 				EDDE763D290C2D3100E89522 /* NoteTableViewCell.swift in Sources */,
 				EDE8FD9A2915A47100E8DDDB /* EventsDetailViewController.swift in Sources */,
