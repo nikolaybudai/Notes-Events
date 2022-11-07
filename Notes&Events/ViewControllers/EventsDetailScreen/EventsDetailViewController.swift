@@ -99,7 +99,10 @@ final class EventsDetailViewController: UIViewController {
         var alertController = UIAlertController()
         
         if isAuthorized {
-            NotificationsManager.shared.scheduleNotification(title: "Dont't forget", body: eventTextView.text, date: datePicker.date)
+            NotificationsManager.shared.scheduleNotification(title: "Don't forget!",
+                                                             body: eventTextView.text,
+                                                             date: datePicker.date)
+            
             alertController = NotificationsManager.shared.createConfirmingAlertController(date: datePicker.date)
         } else {
             alertController = NotificationsManager.shared.createNotificationDisabledAlertController()

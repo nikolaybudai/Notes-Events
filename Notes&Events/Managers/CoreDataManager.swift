@@ -75,7 +75,10 @@ extension CoreDataManager {
             request.predicate = predicate
         }
         
-        return NSFetchedResultsController(fetchRequest: request, managedObjectContext: viewContext, sectionNameKeyPath: nil, cacheName: nil)
+        return NSFetchedResultsController(fetchRequest: request,
+                                          managedObjectContext: viewContext,
+                                          sectionNameKeyPath: nil,
+                                          cacheName: nil)
     }
     
     func createEvent() -> Event {
@@ -103,7 +106,10 @@ extension CoreDataManager {
             request.predicate = predicate
         }
         
-        return NSFetchedResultsController(fetchRequest: request, managedObjectContext: viewContext, sectionNameKeyPath: nil, cacheName: nil)
+        return NSFetchedResultsController(fetchRequest: request,
+                                          managedObjectContext: viewContext,
+                                          sectionNameKeyPath: nil,
+                                          cacheName: nil)
     }
     
 }

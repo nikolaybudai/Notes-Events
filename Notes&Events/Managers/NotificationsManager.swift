@@ -37,7 +37,9 @@ final class NotificationsManager {
     
     func createConfirmingAlertController(date: Date?) -> UIAlertController {
     
-        let alertController = UIAlertController(title: "Notification Scheduled!", message: "We will remind you about this event!", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Notification Scheduled!",
+                                                message: "We will remind you about this event!",
+                                                preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: "Ok", style: .default)
         alertController.addAction(okAction)
@@ -46,7 +48,10 @@ final class NotificationsManager {
     }
     
     func createNotificationDisabledAlertController() -> UIAlertController {
-        let alertController = UIAlertController(title: "Notifications disabled!", message: "To recieve notifications you must enable notifications in settings", preferredStyle: .alert)
+        
+        let alertController = UIAlertController(title: "Notifications disabled!",
+                                                message: "To recieve notifications you must enable notifications in settings",
+                                                preferredStyle: .alert)
         
         let goToSettingsAction = UIAlertAction(title: "Settings", style: .default) { _ in
             
@@ -74,11 +79,14 @@ final class NotificationsManager {
         
         guard let date = date else { return }
 
-        let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: date)
+        let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute],
+                                                             from: date)
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
         
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: UUID().uuidString,
+                                            content: content,
+                                            trigger: trigger)
         
         self.notificationCenter.add(request) { error in
             if error != nil {
