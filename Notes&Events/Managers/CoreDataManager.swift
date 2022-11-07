@@ -91,12 +91,17 @@ extension CoreDataManager {
         saveContext()
     }
     
-    func createEventsFetchedResultsController() -> NSFetchedResultsController<Event> {
+    func createEventsFetchedResultsController(filter: String? = nil) -> NSFetchedResultsController<Event> {
         
         let request: NSFetchRequest<Event> = Event.fetchRequest()
         let sortDescriptor = NSSortDescriptor(keyPath: \Event.date, ascending: false)
         
         request.sortDescriptors = [sortDescriptor]
+        
+        if let filter = filter {
+            let predicate = NSPredicate(format: "text contains[cd] %@", filter)
+            request.predicate = predicate
+        }
         
         return NSFetchedResultsController(fetchRequest: request, managedObjectContext: viewContext, sectionNameKeyPath: nil, cacheName: nil)
     }

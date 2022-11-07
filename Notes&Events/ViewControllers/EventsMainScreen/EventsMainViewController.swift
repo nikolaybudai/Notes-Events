@@ -17,6 +17,8 @@ final class EventsMainViewController: UIViewController {
     @IBOutlet weak var eventsTableView: UITableView!
     @IBOutlet weak var eventsCountLabel: UILabel!
     
+    private let searchController = UISearchController()
+    
     private var fetchedResultsController: NSFetchedResultsController<Event>?
     
     //MARK: - View Lifecycle
@@ -34,6 +36,7 @@ final class EventsMainViewController: UIViewController {
         
         setupFetchedResultsController()
         configureEventsTableView()
+        configureSearchBar()
         refreshEventsCountLabel()
     }
     
@@ -52,8 +55,8 @@ final class EventsMainViewController: UIViewController {
         }
     }
     
-    private func setupFetchedResultsController() {
-        fetchedResultsController = CoreDataManager.shared.createEventsFetchedResultsController()
+    private func setupFetchedResultsController(filter: String? = nil) {
+        fetchedResultsController = CoreDataManager.shared.createEventsFetchedResultsController(filter: filter)
         
         fetchedResultsController?.delegate = self
         
@@ -64,6 +67,12 @@ final class EventsMainViewController: UIViewController {
         }
         
         refreshEventsCountLabel()
+    }
+    
+    private func configureSearchBar() {
+        navigationItem.searchController = searchController
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.delegate = self
     }
     
     private func goToEditingEvent(event: Event) {
@@ -164,6 +173,7 @@ extension EventsMainViewController: NSFetchedResultsControllerDelegate {
             let newIndexPath = newIndexPath {
                 eventsTableView.moveRow(at: indexPath, to: newIndexPath)
             }
+            eventsTableView.reloadData()
         case .update:
             if let indexPath = indexPath {
                 eventsTableView.reloadRows(at: [indexPath], with: .automatic)
@@ -173,6 +183,35 @@ extension EventsMainViewController: NSFetchedResultsControllerDelegate {
         }
         
         refreshEventsCountLabel()
+    }
+    
+}
+
+
+//MARK: - UISearchBarDelegate
+
+extension EventsMainViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        search(searchText)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        search("")
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        search(searchBar.text ?? "")
+    }
+    
+    func search(_ query: String) {
+        if query.count >= 1 {
+            setupFetchedResultsController(filter: query)
+        } else {
+            setupFetchedResultsController()
+        }
+
+        eventsTableView.reloadData()
     }
     
 }
