@@ -319,9 +319,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="162" id="xEE-kB-ELW"/>
                                 </constraints>
-                                <date key="minimumDate" timeIntervalSinceReferenceDate="662727600">
-                                    <!--2022-01-01 11:00:00 +0000-->
-                                </date>
                                 <date key="maximumDate" timeIntervalSinceReferenceDate="946638000">
                                     <!--2030-12-31 11:00:00 +0000-->
                                 </date>
@@ -342,7 +339,7 @@
                     </view>
                     <connections>
                         <outlet property="datePicker" destination="AqY-ZP-oEg" id="vPO-8I-Lnl"/>
-                        <outlet property="eventsTextView" destination="VW1-Hc-8B6" id="TbU-d4-WSW"/>
+                        <outlet property="eventTextView" destination="VW1-Hc-8B6" id="TbU-d4-WSW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4QC-tf-vsR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
