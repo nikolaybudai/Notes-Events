@@ -10,12 +10,16 @@ import CoreData
 
 class EventsMainViewController: UIViewController {
 
+    //MARK: - Variables and Constants
+    
     static let identifier = "EventsMainViewController"
     
     @IBOutlet weak var eventsTableView: UITableView!
     @IBOutlet weak var eventsCountLabel: UILabel!
     
     private var fetchedResultsController: NSFetchedResultsController<Event>!
+    
+    //MARK: - View Lifecycle
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

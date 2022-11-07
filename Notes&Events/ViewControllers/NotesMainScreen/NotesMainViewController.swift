@@ -8,10 +8,10 @@
 import UIKit
 import CoreData
 
-//MARK: - ToDo - remove ! with guard or optional binding
-
 class NotesMainViewController: UIViewController {
 
+    //MARK: - Variables and Constants
+    
     static let identifier = "NotesMainViewController"
     
     @IBOutlet weak var notesTableView: UITableView!
@@ -22,11 +22,7 @@ class NotesMainViewController: UIViewController {
     
     private var fetchedResultsController: NSFetchedResultsController<Note>!
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        notesTableView.reloadData()
-    }
+    //MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -181,6 +177,7 @@ extension NotesMainViewController: NSFetchedResultsControllerDelegate {
             let newIndexPath = newIndexPath {
                 notesTableView.moveRow(at: indexPath, to: newIndexPath)
             }
+            notesTableView.reloadData()
         case .update:
             if let indexPath = indexPath {
                 notesTableView.reloadRows(at: [indexPath], with: .automatic)

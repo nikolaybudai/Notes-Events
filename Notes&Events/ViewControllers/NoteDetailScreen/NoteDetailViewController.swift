@@ -9,6 +9,8 @@ import UIKit
 
 class NoteDetailViewController: UIViewController {
 
+    //MARK: - Variables and Constants
+    
     static let identifier = "NoteDetailViewController"
     
     @IBOutlet weak var noteTextView: UITextView!
@@ -17,6 +19,8 @@ class NoteDetailViewController: UIViewController {
     var note: Note!
     
     private var tapGestureRecognizer = UITapGestureRecognizer()
+    
+    //MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +36,10 @@ class NoteDetailViewController: UIViewController {
         super.viewDidAppear(animated)
         
         noteTextView.becomeFirstResponder()
-//        noteTextView.delegate = self
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+        super.viewDidDisappear(animated)
 
          saveNote()
     }
@@ -88,30 +91,3 @@ class NoteDetailViewController: UIViewController {
     }
     
 }
-
-
-////MARK: - UITextViewDelegate
-//
-//extension NoteDetailViewController: UITextViewDelegate {
-//
-//    func textViewDidEndEditing(_ textView: UITextView) {
-//        note.text = noteTextView.text
-//
-//        switch segmentedControl.selectedSegmentIndex {
-//        case 0:
-//            note.priority = PriorityType.low
-//        case 1:
-//            note.priority = PriorityType.middle
-//        case 2:
-//            note.priority = PriorityType.high
-//        default:
-//            note.priority = .low
-//        }
-//        if note.text?.isEmpty ?? true {
-//            deleteNote()
-//        } else {
-//            updateNote()
-//        }
-//    }
-//
-//}

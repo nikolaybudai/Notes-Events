@@ -9,14 +9,25 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
 
+    //MARK: - IBOutlets
+    
     @IBOutlet weak var myNotesButton: UIButton!
     @IBOutlet weak var myEventsButton: UIButton!
+    
+    //MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureButtons()
         NotificationsManager.shared.requestAuthorization()
+    }
+    
+    //MARK: - Methods
+    
+    private func configureButtons() {
+        myNotesButton.layer.cornerRadius = 15
+        myEventsButton.layer.cornerRadius = 15
     }
 
     //MARK: - Actions
@@ -31,11 +42,5 @@ class WelcomeViewController: UIViewController {
         navigationController?.pushViewController(controller, animated: true)
     }
     
-    //MARK: - UI Methods
-    
-    private func configureButtons() {
-        myNotesButton.layer.cornerRadius = 15
-        myEventsButton.layer.cornerRadius = 15
-    }
 }
 

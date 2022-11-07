@@ -9,6 +9,8 @@ import UIKit
 
 class EventsDetailViewController: UIViewController {
 
+    //MARK: - Variables and Constants
+    
     static let identifier = "EventsDetailViewController"
     
     @IBOutlet weak var eventTextView: UITextView!
@@ -18,6 +20,8 @@ class EventsDetailViewController: UIViewController {
     var event: Event!
     
     private var tapGestureRecognizer = UITapGestureRecognizer()
+    
+    //MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +39,7 @@ class EventsDetailViewController: UIViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+        super.viewDidDisappear(animated)
         
         saveEvent()
     }

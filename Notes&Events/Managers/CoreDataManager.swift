@@ -21,13 +21,11 @@ final class CoreDataManager {
         persistentContainer = NSPersistentContainer(name: modelName)
     }
 
-    func load(completion: (() -> Void)? = nil) {
+    func load() {
         persistentContainer.loadPersistentStores { description, error in
             guard error == nil else {
                 fatalError(error!.localizedDescription)
             }
-            
-            completion?()
         }
     }
 
