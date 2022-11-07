@@ -16,7 +16,7 @@ class NoteDetailViewController: UIViewController {
     @IBOutlet weak var noteTextView: UITextView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
-    var note: Note!
+    var note: Note?
     
     private var tapGestureRecognizer = UITapGestureRecognizer()
     
@@ -25,9 +25,7 @@ class NoteDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        noteTextView.text = note.text
-        segmentedControl.selectedSegmentIndex = Int(note.priority.rawValue)
-        
+        setupNoteInfo()
         configureSegmentedControl()
         configureTapGestureRecognizer()
     }
@@ -46,6 +44,13 @@ class NoteDetailViewController: UIViewController {
 
     //MARK: - Methods
     
+    private func setupNoteInfo() {
+        if let note = note {
+            noteTextView.text = note.text
+            segmentedControl.selectedSegmentIndex = Int(note.priority.rawValue)
+        }
+    }
+    
     private func configureTapGestureRecognizer() {
         tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapGestureRecognizer.cancelsTouchesInView = false
@@ -58,15 +63,21 @@ class NoteDetailViewController: UIViewController {
     }
     
     private func updateNote() {
-        note.lastUpdated = Date()
+        if let note = note {
+            note.lastUpdated = Date()
+        }
         CoreDataManager.shared.saveContext()
     }
     
     private func deleteNote() {
-        CoreDataManager.shared.deleteNote(note)
+        if let note = note {
+            CoreDataManager.shared.deleteNote(note)
+        }
     }
     
     func saveNote() {
+        guard let note = note else { return }
+        
         note.text = noteTextView.text
 
         switch segmentedControl.selectedSegmentIndex {

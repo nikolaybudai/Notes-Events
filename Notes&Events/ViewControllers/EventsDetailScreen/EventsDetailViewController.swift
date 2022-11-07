@@ -17,7 +17,7 @@ class EventsDetailViewController: UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var scheduleButton: UIButton!
     
-    var event: Event!
+    var event: Event?
     
     private var tapGestureRecognizer = UITapGestureRecognizer()
     
@@ -26,8 +26,7 @@ class EventsDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        eventTextView.text = event.title
-        datePicker.date = event.date ?? Date()
+        setupEventInfo()
         configureTapGestureRecognizer()
         configureScheduleButton()
     }
@@ -50,6 +49,13 @@ class EventsDetailViewController: UIViewController {
         scheduleButton.layer.cornerRadius = 15
     }
     
+    private func setupEventInfo() {
+        if let event = event {
+            eventTextView.text = event.title
+            datePicker.date = event.date ?? Date()
+        }
+    }
+    
     private func configureTapGestureRecognizer() {
         tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapGestureRecognizer.cancelsTouchesInView = false
@@ -57,15 +63,21 @@ class EventsDetailViewController: UIViewController {
     }
     
     private func updateEvent() {
-        event.date = datePicker.date
+        if let event = event {
+            event.date = datePicker.date
+        }
         CoreDataManager.shared.saveContext()
     }
     
     private func deleteEvent() {
-        CoreDataManager.shared.deleteEvent(event)
+        if let event = event {
+            CoreDataManager.shared.deleteEvent(event)
+        }
     }
     
     private func saveEvent() {
+        guard let event = event else { return }
+
         event.title = eventTextView.text
         
         if event.title?.isEmpty ?? true {

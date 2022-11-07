@@ -20,7 +20,7 @@ class NotesMainViewController: UIViewController {
     
     private let searchController = UISearchController()
     
-    private var fetchedResultsController: NSFetchedResultsController<Note>!
+    private var fetchedResultsController: NSFetchedResultsController<Note>?
     
     //MARK: - View Lifecycle
     
@@ -43,8 +43,11 @@ class NotesMainViewController: UIViewController {
     }
     
     private func refreshNotesCountLabel() {
-        let count = fetchedResultsController.sections![0].numberOfObjects
-        notesCountLabel.text = "\(count) \(count == 1 ? "note" : "notes")"
+        guard let fetchedResultsController = fetchedResultsController else { return }
+        
+        if let count = fetchedResultsController.sections?[0].numberOfObjects {
+            notesCountLabel.text = "\(count) \(count == 1 ? "note" : "notes")"
+        }
     }
     
     private func setupFetchedResultsController(filter: String? = nil) {
@@ -58,10 +61,10 @@ class NotesMainViewController: UIViewController {
             fetchedResultsController = CoreDataManager.shared.createNotesFetchResultsController(filter: filter, isSortedByPriority: false)
         }
         
-        fetchedResultsController.delegate = self
+        fetchedResultsController?.delegate = self
         
         do {
-            try fetchedResultsController.performFetch()
+            try fetchedResultsController?.performFetch()
         } catch {
             print(error.localizedDescription)
         }
@@ -109,7 +112,7 @@ class NotesMainViewController: UIViewController {
 
 extension NotesMainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let notes = fetchedResultsController.sections?[section] else { return 0 }
+        guard let notes = fetchedResultsController?.sections?[section] else { return 0 }
         return notes.numberOfObjects
     }
     
@@ -124,20 +127,20 @@ extension NotesMainViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
-        let note = fetchedResultsController.object(at: indexPath)
+        let note = fetchedResultsController?.object(at: indexPath)
         
         cell.setup(note: note)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let note = fetchedResultsController.object(at: indexPath)
+        guard let note = fetchedResultsController?.object(at: indexPath) else { return }
         goToNoteEditing(note: note)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let note = fetchedResultsController.object(at: indexPath)
+            guard let note = fetchedResultsController?.object(at: indexPath) else { return }
             deleteNoteFromStorage(note: note)
         }
     }

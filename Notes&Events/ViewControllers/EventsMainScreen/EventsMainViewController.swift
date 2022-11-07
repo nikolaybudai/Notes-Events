@@ -17,7 +17,7 @@ class EventsMainViewController: UIViewController {
     @IBOutlet weak var eventsTableView: UITableView!
     @IBOutlet weak var eventsCountLabel: UILabel!
     
-    private var fetchedResultsController: NSFetchedResultsController<Event>!
+    private var fetchedResultsController: NSFetchedResultsController<Event>?
     
     //MARK: - View Lifecycle
     
@@ -45,17 +45,20 @@ class EventsMainViewController: UIViewController {
     }
     
     private func refreshEventsCountLabel() {
-        let count = fetchedResultsController.sections![0].numberOfObjects
-        eventsCountLabel.text = "\(count) \(count == 1 ? "event" : "events")"
+        guard let fetchedResultsController = fetchedResultsController else { return }
+
+        if let count = fetchedResultsController.sections?[0].numberOfObjects {
+            eventsCountLabel.text = "\(count) \(count == 1 ? "event" : "events")"
+        }
     }
     
     private func setupFetchedResultsController() {
         fetchedResultsController = CoreDataManager.shared.createEventsFetchedResultsController()
         
-        fetchedResultsController.delegate = self
+        fetchedResultsController?.delegate = self
         
         do {
-            try fetchedResultsController.performFetch()
+            try fetchedResultsController?.performFetch()
         } catch {
             print(error.localizedDescription)
         }
@@ -91,7 +94,7 @@ class EventsMainViewController: UIViewController {
 extension EventsMainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let events = fetchedResultsController.sections?[section] else { return 0 }
+        guard let events = fetchedResultsController?.sections?[section] else { return 0 }
         return events.numberOfObjects
     }
     
@@ -106,20 +109,20 @@ extension EventsMainViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
-        let event = fetchedResultsController.object(at: indexPath)
+        let event = fetchedResultsController?.object(at: indexPath)
         
         cell.setup(event: event)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let event = fetchedResultsController.object(at: indexPath)
+        guard let event = fetchedResultsController?.object(at: indexPath) else { return }
         goToEditingEvent(event: event)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let event = fetchedResultsController.object(at: indexPath)
+            guard let event = fetchedResultsController?.object(at: indexPath) else { return }
             deleteEventFromStorage(event: event)
         }
     }
