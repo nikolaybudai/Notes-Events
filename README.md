@@ -26,4 +26,4 @@ Application for adding notes and events and recieving notifications about the ev
 <img width="340" alt="Снимок экрана 2022-11-07 в 19 01 02" src="https://user-images.githubusercontent.com/90472453/200357554-daedbdca-283d-42dc-8c3b-cb4f7a537993.png">
 <img width="339" alt="Снимок экрана 2022-11-08 в 14 46 58" src="https://user-images.githubusercontent.com/90472453/200557859-f4f7b94c-73d1-4f6a-9482-958a8b645530.png">
 <img width="344" alt="Снимок экрана 2022-11-08 в 14 52 36" src="https://user-images.githubusercontent.com/90472453/200557881-b0eef5bc-ea92-4f60-b772-0ea706423ed7.png">
-
+<img width="343" alt="Снимок экрана 2022-11-08 в 14 58 02" src="https://user-images.githubusercontent.com/90472453/200558271-9baefff9-be51-4782-bd01-cf7f3fd3bcd2.png">
