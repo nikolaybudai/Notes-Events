@@ -36,9 +36,9 @@ final class NotificationsManager {
     }
     
     func createConfirmingAlertController(date: Date?) -> UIAlertController {
-    
+            
         let alertController = UIAlertController(title: "Notification Scheduled!",
-                                                message: "We will remind you about this event!",
+                                                message: "We will send you notification on \(formatDate(date: date ?? Date()))",
                                                 preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: "Ok", style: .default)
@@ -95,6 +95,12 @@ final class NotificationsManager {
             }
         }
 
+    }
+    
+    private func formatDate(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "d MMM y HH:mm"
+        return formatter.string(from: date)
     }
     
 }
