@@ -315,9 +315,9 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="AqY-ZP-oEg">
-                                <rect key="frame" x="0.0" y="491" width="390" height="162"/>
+                                <rect key="frame" x="0.0" y="491" width="390" height="143"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="162" id="xEE-kB-ELW"/>
+                                    <constraint firstAttribute="height" constant="143" id="bPX-NK-FeM"/>
                                 </constraints>
                                 <date key="minimumDate" timeIntervalSinceReferenceDate="688993200">
                                     <!--2022-11-01 11:00:00 +0000-->
@@ -327,7 +327,7 @@
                                 </date>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0x-TI-pd5">
-                                <rect key="frame" x="93" y="685" width="204" height="54"/>
+                                <rect key="frame" x="93" y="652" width="204" height="54"/>
                                 <color key="backgroundColor" red="0.68235301969999995" green="0.13725490870000001" blue="0.090196087960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="204" id="g5a-Qz-0q8"/>
@@ -343,20 +343,29 @@
                                     <action selector="scheduleButtonTapped:" destination="qz4-g1-1TV" eventType="touchUpInside" id="DnL-Iw-5Nb"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press the button to recieve notification" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RkF-H4-Qh7">
+                                <rect key="frame" x="0.0" y="789" width="390" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.55581202659999995" green="0.025837300269999999" blue="0.0050176917739999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="01Z-ME-Be8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="VW1-Hc-8B6" firstAttribute="centerX" secondItem="01Z-ME-Be8" secondAttribute="centerX" id="4Sc-xk-t1s"/>
+                            <constraint firstItem="RkF-H4-Qh7" firstAttribute="centerX" secondItem="01Z-ME-Be8" secondAttribute="centerX" id="5qX-c3-dYM"/>
                             <constraint firstItem="VW1-Hc-8B6" firstAttribute="leading" secondItem="01Z-ME-Be8" secondAttribute="leading" id="9Ks-VO-Z7Y"/>
+                            <constraint firstItem="RkF-H4-Qh7" firstAttribute="width" secondItem="35W-NT-Si1" secondAttribute="width" id="AK3-Tr-9Ku"/>
                             <constraint firstItem="VW1-Hc-8B6" firstAttribute="height" secondItem="35W-NT-Si1" secondAttribute="height" multiplier="0.5" id="An2-YB-Klg"/>
                             <constraint firstItem="l0x-TI-pd5" firstAttribute="centerX" secondItem="01Z-ME-Be8" secondAttribute="centerX" id="LeI-QR-DXP"/>
                             <constraint firstItem="AqY-ZP-oEg" firstAttribute="centerX" secondItem="01Z-ME-Be8" secondAttribute="centerX" id="MzK-0K-8vk"/>
                             <constraint firstItem="AqY-ZP-oEg" firstAttribute="top" secondItem="VW1-Hc-8B6" secondAttribute="bottom" constant="25" id="Oy4-JQ-w1S"/>
                             <constraint firstItem="01Z-ME-Be8" firstAttribute="trailing" secondItem="VW1-Hc-8B6" secondAttribute="trailing" id="TMc-IV-5Zf"/>
-                            <constraint firstItem="l0x-TI-pd5" firstAttribute="top" secondItem="AqY-ZP-oEg" secondAttribute="bottom" constant="32" id="iFO-oM-PX4"/>
+                            <constraint firstItem="01Z-ME-Be8" firstAttribute="bottom" secondItem="RkF-H4-Qh7" secondAttribute="bottom" id="UwX-B7-JIT"/>
                             <constraint firstItem="VW1-Hc-8B6" firstAttribute="top" secondItem="01Z-ME-Be8" secondAttribute="top" id="ogi-QR-ndB"/>
                             <constraint firstItem="AqY-ZP-oEg" firstAttribute="width" secondItem="35W-NT-Si1" secondAttribute="width" id="vuf-Vc-RFN"/>
+                            <constraint firstItem="l0x-TI-pd5" firstAttribute="top" secondItem="AqY-ZP-oEg" secondAttribute="bottom" constant="18" id="xWD-HR-pQR"/>
                         </constraints>
                     </view>
                     <connections>
