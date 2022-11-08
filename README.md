@@ -24,5 +24,6 @@ Application for adding notes and events and recieving notifications about the ev
 <img width="343" alt="Снимок экрана 2022-11-07 в 18 53 42" src="https://user-images.githubusercontent.com/90472453/200357524-76beb237-dd38-47a6-a0fd-cb91522e3d1e.png">
 <img width="342" alt="Снимок экрана 2022-11-07 в 18 54 53" src="https://user-images.githubusercontent.com/90472453/200357539-b4f584ea-effa-4e81-81e2-f859e048baa1.png">
 <img width="340" alt="Снимок экрана 2022-11-07 в 19 01 02" src="https://user-images.githubusercontent.com/90472453/200357554-daedbdca-283d-42dc-8c3b-cb4f7a537993.png">
-<img width="343" alt="Снимок экрана 2022-11-07 в 19 01 56" src="https://user-images.githubusercontent.com/90472453/200357563-521161db-ce97-4f84-be3a-f0c49bae9656.png">
-<img width="345" alt="Снимок экрана 2022-11-07 в 19 03 01" src="https://user-images.githubusercontent.com/90472453/200357576-81407e57-5e0f-483a-838c-d46cb7f97d30.png">
+<img width="339" alt="Снимок экрана 2022-11-08 в 14 46 58" src="https://user-images.githubusercontent.com/90472453/200557859-f4f7b94c-73d1-4f6a-9482-958a8b645530.png">
+<img width="344" alt="Снимок экрана 2022-11-08 в 14 52 36" src="https://user-images.githubusercontent.com/90472453/200557881-b0eef5bc-ea92-4f60-b772-0ea706423ed7.png">
+
