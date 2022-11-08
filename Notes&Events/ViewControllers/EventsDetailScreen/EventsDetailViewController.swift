@@ -57,7 +57,7 @@ final class EventsDetailViewController: UIViewController {
     }
     
     private func configureTapGestureRecognizer() {
-        tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(textViewTapped))
         tapGestureRecognizer.cancelsTouchesInView = false
         eventTextView.addGestureRecognizer(tapGestureRecognizer)
     }
@@ -87,8 +87,12 @@ final class EventsDetailViewController: UIViewController {
         }
     }
     
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
+    @objc func textViewTapped() {
+        if eventTextView.isFirstResponder {
+            eventTextView.resignFirstResponder()
+        } else {
+            eventTextView.becomeFirstResponder()
+        }
     }
     
     //MARK: - Actions

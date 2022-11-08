@@ -52,7 +52,7 @@ final class NoteDetailViewController: UIViewController {
     }
     
     private func configureTapGestureRecognizer() {
-        tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(textViewTapped))
         tapGestureRecognizer.cancelsTouchesInView = false
         noteTextView.addGestureRecognizer(tapGestureRecognizer)
     }
@@ -97,8 +97,12 @@ final class NoteDetailViewController: UIViewController {
         }
     }
     
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
+    @objc func textViewTapped() {
+        if noteTextView.isFirstResponder {
+            noteTextView.resignFirstResponder()
+        } else {
+            noteTextView.becomeFirstResponder()
+        }
     }
     
 }
