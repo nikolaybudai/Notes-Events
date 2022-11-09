@@ -34,9 +34,9 @@ final class EventsMainViewController: UIViewController {
 
         navigationItem.title = "My Events"
         
+        configureSearchBar()
         setupFetchedResultsController()
         configureEventsTableView()
-        configureSearchBar()
         refreshEventsCountLabel()
     }
     

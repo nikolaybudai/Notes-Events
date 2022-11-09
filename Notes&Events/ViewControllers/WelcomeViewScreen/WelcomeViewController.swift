@@ -28,9 +28,6 @@ final class WelcomeViewController: UIViewController {
     private func configureButtons() {
         myNotesButton.layer.cornerRadius = 15
         myEventsButton.layer.cornerRadius = 15
-        
-        myNotesButton.titleLabel?.font = UIFont(name: "Arial Rounded MT Bold", size: 24)
-        myEventsButton.titleLabel?.font = UIFont(name: "Arial Rounded MT Bold", size: 24)
     }
 
     //MARK: - Actions
