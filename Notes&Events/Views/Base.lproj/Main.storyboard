@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CmJ-0v-AEn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CmJ-0v-AEn">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,20 +18,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3oZ-je-5te">
-                                <rect key="frame" x="123" y="127" width="144" height="35"/>
+                                <rect key="frame" x="123" y="130" width="144" height="35"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="30"/>
                                 <color key="textColor" red="0.55581202659999995" green="0.025837300269999999" blue="0.0050176917739999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jhR-OW-EU0">
-                                <rect key="frame" x="39" y="368" width="312" height="62"/>
+                                <rect key="frame" x="39" y="371" width="312" height="62"/>
                                 <color key="backgroundColor" red="0.68235301969999995" green="0.13725490870000001" blue="0.090196087960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="62" id="wQ3-Eu-jkz"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="My Events">
-                                    <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="24"/>
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="23"/>
                                     <color key="baseForegroundColor" red="0.99386895490000005" green="1" blue="0.98052496160000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -38,14 +39,14 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="note" translatesAutoresizingMaskIntoConstraints="NO" id="erP-Cg-pNf">
-                                <rect key="frame" x="41" y="501" width="129" height="177"/>
+                                <rect key="frame" x="41" y="504" width="129" height="177"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="177" id="cE5-pL-nh7"/>
                                     <constraint firstAttribute="width" constant="129" id="nRw-l9-9Z1"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes     &amp;           Events" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUi-6V-vbH">
-                                <rect key="frame" x="213" y="520" width="161" height="139"/>
+                                <rect key="frame" x="213" y="523" width="161" height="139"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="139" id="Oox-qf-3Ew"/>
                                 </constraints>
@@ -54,14 +55,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7pd-3L-I1s">
-                                <rect key="frame" x="39" y="281" width="312" height="62"/>
+                                <rect key="frame" x="39" y="284" width="312" height="62"/>
                                 <color key="backgroundColor" red="0.68235301969999995" green="0.13725490870000001" blue="0.090196087960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="62" id="x58-AY-C7m"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="My Notes">
-                                    <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="24"/>
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="23"/>
                                     <color key="baseForegroundColor" red="0.99386895490000005" green="1" blue="0.98052496160000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -106,11 +107,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5HY-qL-kN6">
-                                <rect key="frame" x="0.0" y="122" width="390" height="654"/>
+                                <rect key="frame" x="0.0" y="125" width="390" height="651"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NoteCell" rowHeight="65" id="KUL-I4-y1T" customClass="NoteTableViewCell" customModule="Notes_Events" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="65"/>
+                                        <rect key="frame" x="0.0" y="50" width="390" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KUL-I4-y1T" id="dO7-5v-Ifh">
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="65"/>
@@ -156,7 +157,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sy7-5y-ufL">
-                                <rect key="frame" x="303" y="784" width="71" height="31"/>
+                                <rect key="frame" x="293.66666666666669" y="780.66666666666663" width="80.333333333333314" height="34.333333333333371"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Add">
                                     <color key="baseForegroundColor" red="0.5" green="0.02324284024" blue="0.0045138387929999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
@@ -174,7 +175,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KBD-V0-deh">
-                                <rect key="frame" x="15" y="63" width="360" height="32"/>
+                                <rect key="frame" x="15" y="66" width="360" height="32"/>
                                 <segments>
                                     <segment title="By Date"/>
                                     <segment title="By Priority"/>
@@ -219,11 +220,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Auf-w9-nKm">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="776"/>
+                                <rect key="frame" x="0.0" y="3" width="390" height="773"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventCell" rowHeight="65" id="0yt-lV-rgi" customClass="EventsTableViewCell" customModule="Notes_Events" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="65"/>
+                                        <rect key="frame" x="0.0" y="50" width="390" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0yt-lV-rgi" id="LzN-RJ-Yh8">
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="65"/>
@@ -268,7 +269,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6US-LG-H2d">
-                                <rect key="frame" x="303" y="784" width="71" height="31"/>
+                                <rect key="frame" x="293.66666666666669" y="780.66666666666663" width="80.333333333333314" height="34.333333333333371"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Add">
                                     <color key="baseForegroundColor" red="0.55581202659999995" green="0.025837300269999999" blue="0.0050176917739999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
@@ -308,14 +309,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VW1-Hc-8B6">
-                                <rect key="frame" x="0.0" y="44" width="390" height="422"/>
+                                <rect key="frame" x="0.0" y="47" width="390" height="422"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="AqY-ZP-oEg">
-                                <rect key="frame" x="0.0" y="491" width="390" height="143"/>
+                                <rect key="frame" x="0.0" y="494" width="390" height="143"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="143" id="bPX-NK-FeM"/>
                                 </constraints>
@@ -327,7 +328,7 @@
                                 </date>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0x-TI-pd5">
-                                <rect key="frame" x="93" y="652" width="204" height="54"/>
+                                <rect key="frame" x="93" y="655" width="204" height="54"/>
                                 <color key="backgroundColor" red="0.68235301969999995" green="0.13725490870000001" blue="0.090196087960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="204" id="g5a-Qz-0q8"/>
@@ -387,7 +388,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HPg-gd-k4x">
-                                <rect key="frame" x="0.0" y="44" width="390" height="651"/>
+                                <rect key="frame" x="0.0" y="47" width="390" height="648"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <gestureRecognizers/>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -444,7 +445,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CmJ-0v-AEn" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Y9r-hS-Xk9">
-                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -461,7 +462,7 @@
         <image name="middle" width="400" height="400"/>
         <image name="note" width="341.33334350585938" height="341.33334350585938"/>
         <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
