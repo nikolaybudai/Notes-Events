@@ -1,0 +1,69 @@
+
+/* Class = "UILabel"; text = "Welcome!"; ObjectID = "3oZ-je-5te"; */
+"3oZ-je-5te.text" = "Welcome!";
+
+/* Class = "UILabel"; text = "0 notes"; ObjectID = "5su-MN-e1W"; */
+"5su-MN-e1W.text" = "0 notes";
+
+/* Class = "UIButton"; configuration.title = "Add"; ObjectID = "6US-LG-H2d"; */
+"6US-LG-H2d.configuration.title" = "Add";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "7Cb-XI-rmt"; */
+"7Cb-XI-rmt.text" = "Label";
+
+/* Class = "UIButton"; configuration.title = "My Notes"; ObjectID = "7pd-3L-I1s"; */
+"7pd-3L-I1s.configuration.title" = "My Notes";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "7pd-3L-I1s"; */
+"7pd-3L-I1s.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "En8-Em-SDS"; */
+"En8-Em-SDS.text" = "Label";
+
+/* Class = "UISegmentedControl"; KBD-V0-deh.segmentTitles[0] = "By Date"; ObjectID = "KBD-V0-deh"; */
+"KBD-V0-deh.segmentTitles[0]" = "By Date";
+
+/* Class = "UISegmentedControl"; KBD-V0-deh.segmentTitles[1] = "By Priority"; ObjectID = "KBD-V0-deh"; */
+"KBD-V0-deh.segmentTitles[1]" = "By Priority";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "NiL-If-RVq"; */
+"NiL-If-RVq.text" = "Label";
+
+/* Class = "UISegmentedControl"; PC0-mx-VBR.segmentTitles[0] = "Low"; ObjectID = "PC0-mx-VBR"; */
+"PC0-mx-VBR.segmentTitles[0]" = "Low";
+
+/* Class = "UISegmentedControl"; PC0-mx-VBR.segmentTitles[1] = "Middle"; ObjectID = "PC0-mx-VBR"; */
+"PC0-mx-VBR.segmentTitles[1]" = "Middle";
+
+/* Class = "UISegmentedControl"; PC0-mx-VBR.segmentTitles[2] = "High"; ObjectID = "PC0-mx-VBR"; */
+"PC0-mx-VBR.segmentTitles[2]" = "High";
+
+/* Class = "UILabel"; text = "Press the button to recieve notification"; ObjectID = "RkF-H4-Qh7"; */
+"RkF-H4-Qh7.text" = "Press the button to recieve notification";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "X2N-so-yeU"; */
+"X2N-so-yeU.text" = "Label";
+
+/* Class = "UILabel"; text = "Choose priority"; ObjectID = "Zye-Yp-nEv"; */
+"Zye-Yp-nEv.text" = "Choose priority";
+
+/* Class = "UILabel"; text = "Notes     &           Events"; ObjectID = "fUi-6V-vbH"; */
+"fUi-6V-vbH.text" = "Notes     &           Events";
+
+/* Class = "UIButton"; configuration.title = "My Events"; ObjectID = "jhR-OW-EU0"; */
+"jhR-OW-EU0.configuration.title" = "My Events";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "jhR-OW-EU0"; */
+"jhR-OW-EU0.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Schedule"; ObjectID = "l0x-TI-pd5"; */
+"l0x-TI-pd5.configuration.title" = "Schedule";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "l0x-TI-pd5"; */
+"l0x-TI-pd5.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "0 events"; ObjectID = "n8z-4z-CzY"; */
+"n8z-4z-CzY.text" = "0 events";
+
+/* Class = "UIButton"; configuration.title = "Add"; ObjectID = "sy7-5y-ufL"; */
+"sy7-5y-ufL.configuration.title" = "Add";

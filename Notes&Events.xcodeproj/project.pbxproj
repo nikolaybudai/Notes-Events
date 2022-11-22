@@ -82,41 +82,25 @@
 		ED4E2CD62904036000542508 /* Notes&Events */ = {
 			isa = PBXGroup;
 			children = (
-				EDDE764F290C345200E89522 /* Managers */,
 				EDDE764A290C318D00E89522 /* App */,
-				EDDE7646290C30CB00E89522 /* Models */,
-				EDDE764C290C323E00E89522 /* ViewControllers */,
-				EDDE764B290C322000E89522 /* Views */,
+				EDDE764F290C345200E89522 /* Manager */,
+				EDDE764B290C322000E89522 /* View */,
+				EDDE7646290C30CB00E89522 /* Model */,
+				EDDE764C290C323E00E89522 /* ViewController */,
 				EDDE7649290C318300E89522 /* Data */,
 				ED4E2CE82904036100542508 /* Info.plist */,
 			);
 			path = "Notes&Events";
 			sourceTree = "<group>";
 		};
-		ED8094A9290CFB4200884393 /* NoteDetailScreen */ = {
-			isa = PBXGroup;
-			children = (
-				ED8094AA290CFB6000884393 /* NoteDetailViewController.swift */,
-			);
-			path = NoteDetailScreen;
-			sourceTree = "<group>";
-		};
-		EDA4B5AC291560FB001236F7 /* EventsMainScreen */ = {
-			isa = PBXGroup;
-			children = (
-				EDA4B5AD29156116001236F7 /* EventsMainViewController.swift */,
-			);
-			path = EventsMainScreen;
-			sourceTree = "<group>";
-		};
-		EDDE7646290C30CB00E89522 /* Models */ = {
+		EDDE7646290C30CB00E89522 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				ED4E2CE02904036000542508 /* Notes_Events.xcdatamodeld */,
 				EDDE7647290C30D600E89522 /* Note */,
 				EDDE7648290C30DE00E89522 /* Event */,
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		EDDE7647290C30D600E89522 /* Note */ = {
@@ -154,7 +138,7 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		EDDE764B290C322000E89522 /* Views */ = {
+		EDDE764B290C322000E89522 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				EDDE763C290C2D3100E89522 /* NoteTableViewCell.swift */,
@@ -162,52 +146,28 @@
 				ED4E2CDD2904036000542508 /* Main.storyboard */,
 				ED4E2CE52904036100542508 /* LaunchScreen.storyboard */,
 			);
-			path = Views;
+			path = View;
 			sourceTree = "<group>";
 		};
-		EDDE764C290C323E00E89522 /* ViewControllers */ = {
+		EDDE764C290C323E00E89522 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				EDE8FD982915A44C00E8DDDB /* EventsDetailScreen */,
-				EDA4B5AC291560FB001236F7 /* EventsMainScreen */,
-				EDDE764D290C326E00E89522 /* WelcomeViewScreen */,
-				EDDE764E290C329200E89522 /* NotesMainScreen */,
-				ED8094A9290CFB4200884393 /* NoteDetailScreen */,
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		EDDE764D290C326E00E89522 /* WelcomeViewScreen */ = {
-			isa = PBXGroup;
-			children = (
+				EDE8FD992915A47100E8DDDB /* EventsDetailViewController.swift */,
+				EDA4B5AD29156116001236F7 /* EventsMainViewController.swift */,
 				ED4E2CDB2904036000542508 /* WelcomeViewController.swift */,
-			);
-			path = WelcomeViewScreen;
-			sourceTree = "<group>";
-		};
-		EDDE764E290C329200E89522 /* NotesMainScreen */ = {
-			isa = PBXGroup;
-			children = (
 				EDDE763A290C2D0C00E89522 /* NotesMainViewController.swift */,
+				ED8094AA290CFB6000884393 /* NoteDetailViewController.swift */,
 			);
-			path = NotesMainScreen;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
-		EDDE764F290C345200E89522 /* Managers */ = {
+		EDDE764F290C345200E89522 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
 				EDDE7653290C348C00E89522 /* CoreDataManager.swift */,
 				EDFB91B02918FB1900DB6856 /* NotificationsManager.swift */,
 			);
-			path = Managers;
-			sourceTree = "<group>";
-		};
-		EDE8FD982915A44C00E8DDDB /* EventsDetailScreen */ = {
-			isa = PBXGroup;
-			children = (
-				EDE8FD992915A47100E8DDDB /* EventsDetailViewController.swift */,
-			);
-			path = EventsDetailScreen;
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
