@@ -18,12 +18,13 @@ Application for adding notes and events and recieving notifications about the ev
 
 # Screenshots
 
-<img width="339" alt="Снимок экрана 2022-11-07 в 18 49 57" src="https://user-images.githubusercontent.com/90472453/200357395-fc4892b1-1eab-4eae-9164-85c96a96c93c.png">
-<img width="341" alt="Снимок экрана 2022-11-07 в 18 51 59" src="https://user-images.githubusercontent.com/90472453/200357477-30713913-52af-450d-83cf-3f2b86ad44e3.png">
-<img width="339" alt="Снимок экрана 2022-11-07 в 18 53 21" src="https://user-images.githubusercontent.com/90472453/200357511-c329601f-d23a-4a36-ae71-f3458ddc327e.png">
-<img width="343" alt="Снимок экрана 2022-11-07 в 18 53 42" src="https://user-images.githubusercontent.com/90472453/200357524-76beb237-dd38-47a6-a0fd-cb91522e3d1e.png">
-<img width="342" alt="Снимок экрана 2022-11-07 в 18 54 53" src="https://user-images.githubusercontent.com/90472453/200357539-b4f584ea-effa-4e81-81e2-f859e048baa1.png">
-<img width="340" alt="Снимок экрана 2022-11-07 в 19 01 02" src="https://user-images.githubusercontent.com/90472453/200357554-daedbdca-283d-42dc-8c3b-cb4f7a537993.png">
-<img width="339" alt="Снимок экрана 2022-11-08 в 14 46 58" src="https://user-images.githubusercontent.com/90472453/200557859-f4f7b94c-73d1-4f6a-9482-958a8b645530.png">
-<img width="344" alt="Снимок экрана 2022-11-08 в 14 52 36" src="https://user-images.githubusercontent.com/90472453/200557881-b0eef5bc-ea92-4f60-b772-0ea706423ed7.png">
-<img width="343" alt="Снимок экрана 2022-11-08 в 14 58 02" src="https://user-images.githubusercontent.com/90472453/200558271-9baefff9-be51-4782-bd01-cf7f3fd3bcd2.png">
+![IMG_0944](https://user-images.githubusercontent.com/90472453/203384039-3d3046ad-e3ea-48a0-b2d2-5c0629ba96e2.PNG)
+![IMG_0945](https://user-images.githubusercontent.com/90472453/203384135-9b615ced-1a0c-46a6-9477-e2f6db278c1d.PNG)
+![IMG_0947](https://user-images.githubusercontent.com/90472453/203384201-94da080d-0273-45da-8636-dfe574d3a721.PNG)
+![IMG_0946](https://user-images.githubusercontent.com/90472453/203384267-cd586ce0-2977-46d4-9891-f20264eec052.PNG)
+![IMG_0948](https://user-images.githubusercontent.com/90472453/203384310-26c55337-6441-4006-a74b-7f1083a92f50.PNG)
+![IMG_0949](https://user-images.githubusercontent.com/90472453/203384331-950ea14e-976e-472a-841b-3d151074d1b9.PNG)
+![IMG_0950](https://user-images.githubusercontent.com/90472453/203384344-b6ae2be9-95de-49f2-9468-50b4a509e5a0.PNG)
+![IMG_0951](https://user-images.githubusercontent.com/90472453/203384356-ff3e4fcb-3857-4b2f-86f3-9d7fdc051c0c.PNG)
+
+
